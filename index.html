@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ClearNotes</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <title>Notes360</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    textarea { width: 100%; height: 70vh; font-size: 16px; }
+  </style>
 </head>
 <body>
 
@@ -12,6 +14,15 @@
 <textarea id="note" placeholder="Start typing..."></textarea>
 
 <script>
+  const note = document.getElementById("note");
+
+  // load saved note
+  note.value = localStorage.getItem("note") || "";
+
+  // save on typing
+  note.addEventListener("input", () => {
+    localStorage.setItem("note", note.value);
+  });
 </script>
 
 </body>
