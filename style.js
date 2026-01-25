@@ -1,9 +1,11 @@
 const note = document.getElementById("note");
+const status = document.getElementById("status");
 
-// load saved note
+// Load saved note on page load
 note.value = localStorage.getItem("note") || "";
 
-// save on typing
+// Save automatically when typing
 note.addEventListener("input", () => {
   localStorage.setItem("note", note.value);
+  status.textContent = "Saved ✔";
 });
