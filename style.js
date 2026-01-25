@@ -1,3 +1,4 @@
+console.log("script.js is running");
 const note = document.getElementById("note");
 const status = document.getElementById("status");
 
