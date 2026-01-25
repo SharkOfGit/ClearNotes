@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Notes360</title>
-  <style>
-    body { font-family: Arial; padding: 20px; }
-    textarea { width: 100%; height: 70vh; font-size: 16px; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Notes360</h1>
+  <div class="app">
+    <h1>Notes360</h1>
 
-<textarea id="note" placeholder="Start typing..."></textarea>
+    <textarea id="note" placeholder="Start typing..."></textarea>
 
-<script>
-  const note = document.getElementById("note");
+    <p id="status">Saved ✔</p>
+  </div>
 
-  // load saved note
-  note.value = localStorage.getItem("note") || "";
-
-  // save on typing
-  note.addEventListener("input", () => {
-    localStorage.setItem("note", note.value);
-  });
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
