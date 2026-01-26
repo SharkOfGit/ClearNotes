@@ -3,69 +3,181 @@
   --bg-bottom: #fad4a5;
   --cyan: #00ffff;
   --orange: #ff9d00;
-  --shadow: 0 4px 12px rgba(0,0,0,0.15);
-  --radius: 12px;
+  --dark: #222;
+  --soft-dark: #3a3a3a;
+  --shadow: 0 8px 24px rgba(0,0,0,0.15);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --max: 1100px;
+  --font: "Segoe UI", sans-serif;
+  --serif: "Gravitas One", "Noto Serif", serif;
 }
 
-*{ box-sizing:border-box; }
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body{
-  margin:0;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--font);
   background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
-  color:#222;
+  color: var(--dark);
+  line-height: 1.4;
 }
 
-header{
-  padding:20px;
-  text-align:center;
-}
-
-nav{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-bottom:20px;
-}
-
-a.navlink{
-  text-decoration:none;
-  padding:10px 14px;
-  border-radius:10px;
-  background:var(--cyan);
-  color:black;
-  font-weight:700;
-  transition: .2s;
-}
-
-a.navlink:hover{
-  background:var(--orange);
-}
-
+/* ---------- Global Layout ---------- */
 .container{
-  max-width: 1100px;
-  margin: auto;
-  padding: 20px;
+  width: 90%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
+hr{
+  border: none;
+  height: 3px;
+  background: rgba(0,0,0,0.2);
+  margin: 24px 0;
+}
+
+/* ---------- Header / Titles ---------- */
+h1, h2, h3{
+  font-family: var(--serif);
+}
+
+h1{
+  font-size: clamp(2.2rem, 3vw, 3rem);
+  margin-bottom: 14px;
+}
+
+h2{
+  font-size: clamp(1.4rem, 2vw, 2rem);
+  margin: 18px 0 10px;
+}
+
+h3{
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  margin: 10px 0;
+}
+
+p, ul, ol, details, summary{
+  font-family: var(--font);
+  font-size: 1rem;
+  color: var(--soft-dark);
+}
+
+/* ---------- Buttons ---------- */
+.custom-button, .btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border-radius: var(--radius-sm);
+  border: none;
+  cursor: pointer;
+  background: var(--cyan);
+  color: black;
+  font-weight: 800;
+  transition: transform .15s ease, background .2s ease;
+  text-decoration: none;
+}
+
+.custom-button:hover, .btn:hover{
+  background: var(--orange);
+  transform: translateY(-1px);
+}
+
+.custom-button:active, .btn:active{
+  transform: translateY(1px);
+}
+
+/* ---------- Cards ---------- */
 .card{
-  background:white;
-  padding: 20px;
+  background: white;
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  padding: 20px;
   margin-bottom: 20px;
 }
 
-.custom-button{
-  background:var(--cyan);
-  border:none;
-  padding:12px 20px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:700;
+/* ---------- Sticky Notes ---------- */
+.stickynotes-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
 }
 
-.custom-button:hover{
-  background:var(--orange);
+.stickynote{
+  background: #87f8fa;
+  padding: 18px;
+  border-radius: var(--radius);
+  box-shadow: 5px 5px 16px rgba(0,0,0,0.15);
 }
+
+/* ---------- Details ---------- */
+details{
+  background: var(--cyan);
+  padding: 10px;
+  border-radius: var(--radius-sm);
+  width: fit-content;
+  margin: 10px 0;
+}
+
+details summary{
+  cursor: pointer;
+  font-weight: 700;
+}
+
+/* ---------- Grids / Layouts ---------- */
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.grid-item{
+  background: #d0eaff;
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+/* ---------- Images & Video ---------- */
+img, iframe, video{
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+}
+
+.video-container{
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  margin: 10px 0;
+  overflow: hidden;
+  border-radius: var(--radius);
+}
+
+/* ---------- Forms ---------- */
+input[type="text"], select, input[type="file"]{
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(0,0,0,0.2);
+  margin: 8px 0 14px;
+}
+
+label{
+  font-weight: 700;
+  margin-top: 12px;
+  display: block;
+}
+
+/* ---------- Responsive Fix ---------- */
+@media (max-width: 720px){
+  body{
+    padding-bottom: 30px;
+  }
+}
+
