@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
+<link rel="icon" href="Notes360-MiniLogo.png">
+<style>
+h2, h3, p, ul, ol, button, label, select {
+  font-family: "Segoe UI", "Segoe UI Light", sans-serif;
+}
+h1 {
+  font-family: "Gravitas One", "Noto Serif", serif;
+}
+body {
+  margin: 10px;
+}
+.custom-button {
+  background-color: cyan;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.custom-button:hover {
+  background-color: orange;
+}
+</style>
+<title>Notes360 - Finish Signup</title>
+</head>
+
+<body>
+
+<h1>Congrats! 🥳</h1>
+
+<p>Your Notes360 signup is complete. You can now access personalized notes and resources from your section and classmates right away from the Notes360 repository!</p>
+
+<hr>
+
+<h1>Welcome to the full Notes360 experience!</h1>
+
+<h3>Here's a summary of your selection:</h3>
+<ul>
+  <li><b>School:</b> <span id="school-name"></span></li>
+  <li><b>Grade:</b> <span id="grade-display"></span></li>
+  <li><b>Section:</b> <span id="section-display"></span></li>
+</ul>
+
+<p>In short, <span id="grade-short"></span><span id="section-short"></span> of <i><span id="school-short"></span></i>.</p>
+<br>
+
+<a href="index.html"><button class="custom-button">Confirm Signup</button></a>
+
+<script>
+  const school = JSON.parse(localStorage.getItem("chosenSchool"));
+  const grade = localStorage.getItem("chosenGrade");
+  const section = localStorage.getItem("chosenSection");
+
+  // Update the list
+  document.getElementById("school-name").textContent = school ? school.name : "Not selected";
+  document.getElementById("grade-display").textContent = grade ? grade : "Not selected";
+  document.getElementById("section-display").textContent = section ? section : "Not selected";
+
+  // Update the "In short" sentence
+  document.getElementById("grade-short").textContent = grade ? grade : "";
+  document.getElementById("section-short").textContent = section ? section : "";
+  document.getElementById("school-short").textContent = school ? school.name : "";
+</script>
+
+</body>
+</html>
