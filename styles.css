@@ -5,61 +5,75 @@
 body {
   margin: 0;
   height: 100vh;
-  background: #f9fafb;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #111827;
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #fce7f3);
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #111827;
 }
 
-/* App container */
+/* Main app card */
 .app {
   width: 95%;
-  max-width: 1100px;
+  max-width: 1200px;
   height: 90vh;
-  background: white;
-  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-radius: 28px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.15);
   display: grid;
-  grid-template-columns: 280px 1fr;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  grid-template-columns: 300px 1fr;
   overflow: hidden;
 }
 
 /* Sidebar */
 .sidebar {
-  background: #ffffff;
-  border-right: 1px solid #e5e7eb;
-  padding: 20px;
+  padding: 24px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+}
+
+.sidebar h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .sidebar input {
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: none;
+  background: #f1f5f9;
   font-size: 14px;
 }
 
 .sidebar input:focus {
-  outline: none;
-  border-color: #2563eb;
+  outline: 2px solid #6366f1;
 }
 
+/* New note button */
 .sidebar button {
-  padding: 10px;
-  border-radius: 10px;
+  padding: 12px;
+  border-radius: 16px;
   border: none;
-  background: #2563eb;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
   color: white;
-  font-weight: 600;
+  font-size: 15px;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 10px 20px rgba(99, 102, 241, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .sidebar button:hover {
-  background: #1d4ed8;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(99, 102, 241, 0.45);
 }
 
 /* Notes list */
@@ -69,86 +83,92 @@ body {
 }
 
 .note-item {
-  padding: 10px 12px;
-  border-radius: 10px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  background: white;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
   cursor: pointer;
-  margin-bottom: 6px;
-  font-size: 14px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
 
 .note-item:hover {
-  background: #f3f4f6;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 22px rgba(0,0,0,0.12);
 }
 
 .note-item.active {
-  background: #e0e7ff;
-  font-weight: 600;
+  background: linear-gradient(135deg, #e0e7ff, #fce7f3);
+  font-weight: 700;
 }
 
 /* Editor */
 .editor {
-  padding: 24px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  gap: 14px;
 }
 
 .editor header {
   display: flex;
-  gap: 12px;
-  margin-bottom: 14px;
+  gap: 14px;
 }
 
 .editor input {
   flex: 1;
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  font-size: 16px;
+  padding: 14px 16px;
+  border-radius: 18px;
+  border: none;
+  background: #f1f5f9;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .editor input:focus {
-  outline: none;
-  border-color: #2563eb;
+  outline: 2px solid #6366f1;
 }
 
+/* Delete button */
 .editor button {
-  padding: 10px 14px;
-  border-radius: 10px;
+  padding: 14px 18px;
+  border-radius: 18px;
   border: none;
-  background: #ef4444;
+  background: linear-gradient(135deg, #ef4444, #f97316);
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 10px 20px rgba(239, 68, 68, 0.4);
 }
 
 .editor button:hover {
-  background: #dc2626;
+  opacity: 0.9;
 }
 
 /* Textarea */
 textarea {
   flex: 1;
-  margin-top: 10px;
-  padding: 14px;
-  border-radius: 14px;
-  border: 1px solid #e5e7eb;
+  padding: 20px;
+  border-radius: 24px;
+  border: none;
+  background: white;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.7;
+  box-shadow: inset 0 4px 10px rgba(0,0,0,0.08);
   resize: none;
 }
 
 textarea:focus {
   outline: none;
-  border-color: #2563eb;
 }
 
-/* Status */
+/* Status text */
 #status {
-  font-size: 13px;
-  margin-top: 10px;
-  color: #16a34a;
+  font-size: 14px;
+  font-weight: 600;
+  color: #22c55e;
   text-align: right;
 }
+
 
 
