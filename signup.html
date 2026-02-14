@@ -34,15 +34,27 @@
     <!-- SIGN UP -->
     <h2>Create Account</h2>
     <input id="email" type="email" placeholder="Email">
+
     <input id="password" type="password" placeholder="Password">
-    <button class="custom-button" onclick="register()">Sign Up</button>
+    <label style="font-size:14px;">
+      <input type="checkbox" onclick="togglePass('password')"> Show password
+    </label>
 
     <br><br>
+    <button class="custom-button" onclick="register()">Sign Up</button>
+
+    <br><br><br>
 
     <!-- LOGIN -->
     <h2>Login</h2>
     <input id="loginEmail" type="email" placeholder="Email">
+
     <input id="loginPassword" type="password" placeholder="Password">
+    <label style="font-size:14px;">
+      <input type="checkbox" onclick="togglePass('loginPassword')"> Show password
+    </label>
+
+    <br><br>
     <button class="custom-button" onclick="signin()">Login</button>
 
   </div>
@@ -51,7 +63,7 @@
     <h2>ClearNotes</h2>
   </div>
 
-  <!-- Connect buttons to Firebase -->
+  <!-- Firebase connect -->
   <script type="module">
     import { signup, login } from "./firebase.js";
 
@@ -66,6 +78,14 @@
       const password = document.getElementById("loginPassword").value;
       login(email, password);
     };
+  </script>
+
+  <!-- Show/Hide password logic -->
+  <script>
+    function togglePass(id) {
+      const field = document.getElementById(id);
+      field.type = field.type === "password" ? "text" : "password";
+    }
   </script>
 
 </body>
