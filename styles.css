@@ -1,162 +1,115 @@
-/* ===== Reset ===== */
+/* ===== ClearNotes Design System ===== */
+
+:root {
+    --bg: #f6f8fb;
+    --card: #ffffff;
+    --primary: #4f46e5;
+    --primary-hover: #4338ca;
+    --text: #1f2937;
+    --subtext: #6b7280;
+    --border: #e5e7eb;
+    --radius: 14px;
+}
+
+/* Reset */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, Arial, sans-serif;
 }
 
 body {
-  font-family: "Bricolage Grotesque", system-ui, sans-serif;
-  background: linear-gradient(180deg, #f8fafc, #eef2ff);
-  color: #0f172a;
-  line-height: 1.65;
+    background: var(--bg);
+    color: var(--text);
 }
 
-/* ===== Accessibility ===== */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 16px;
-  background: #0f172a;
-  color: white;
-  padding: 8px 12px;
-  border-radius: 8px;
-  z-index: 100;
+/* Layout container */
+.container {
+    width: min(1100px, 92%);
+    margin: auto;
+    padding: 30px 0;
 }
 
-.skip-link:focus {
-  top: 16px;
+/* Cards */
+.card {
+    background: var(--card);
+    border-radius: var(--radius);
+    padding: 22px;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
+    margin-bottom: 22px;
 }
 
-a:focus,
-button:focus {
-  outline: 3px solid #6366f1;
-  outline-offset: 3px;
-}
-
-/* ===== Header ===== */
-.site-header {
-  background: radial-gradient(circle at top, #e0e7ff, #f8fafc);
-  padding-bottom: 80px;
-}
-
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 24px 8%;
-}
-
-.logo {
-  font-size: 22px;
-  font-weight: 800;
-}
-
-.nav-actions {
-  display: flex;
-  gap: 12px;
-}
-
-.hero {
-  text-align: center;
-  padding: 80px 8% 0;
-}
-
-.hero h1 {
-  font-size: 64px;
-  font-weight: 800;
-  background: linear-gradient(90deg, #6366f1, #ec4899);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.hero p {
-  max-width: 720px;
-  margin: 24px auto 0;
-  font-size: 18px;
-  color: #475569;
-}
-
-/* ===== Sections ===== */
-section {
-  padding: 80px 8%;
+/* Titles */
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
 
 h2 {
-  font-size: 36px;
-  margin-bottom: 12px;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
 }
 
-.section-desc {
-  color: #475569;
-  max-width: 700px;
-  margin-bottom: 48px;
+p {
+    color: var(--subtext);
+    line-height: 1.6;
 }
 
-/* ===== Buttons ===== */
+/* Buttons */
 .btn {
-  padding: 14px 22px;
-  border-radius: 14px;
-  font-size: 15px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 12px 18px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
 }
 
-.btn-primary {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6);
-  color: white;
+.btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
 }
 
-.btn-secondary {
-  background: #f1f5f9;
-  color: #0f172a;
+/* Inputs */
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
 }
 
-/* ===== Cards ===== */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary);
 }
 
-.card {
-  background: white;
-  padding: 28px;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+/* Navbar */
+.navbar {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
 }
 
-.card h3 {
-  margin-bottom: 10px;
+.navbar a {
+    margin-right: 18px;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
 }
 
-/* ===== Video ===== */
-.video-wrapper {
-  max-width: 900px;
-  margin: 0 auto;
-  border-radius: 24px;
-  overflow: hidden;
-  box-shadow: 0 30px 70px rgba(0,0,0,0.15);
+.navbar a:hover {
+    color: var(--primary);
 }
 
-video {
-  width: 100%;
-  display: block;
-}
-
-/* ===== Quotes ===== */
-.quote {
-  background: linear-gradient(135deg, #eef2ff, #fce7f3);
-  padding: 32px;
-  border-radius: 24px;
-}
-
-/* ===== Footer ===== */
-footer {
-  background: #0f172a;
-  color: #cbd5f5;
-  text-align: center;
-  padding: 48px 8%;
-  font-size: 14px;
+/* Grid (dashboard boxes) */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
 }
