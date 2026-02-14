@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Firebase loader -->
+  <script type="module" src="firebase.js"></script>
+
   <title>ClearNotes - Login</title>
   
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="ClearNotesMiniLogo.png">
-
-<link rel="stylesheet" href="styles.css">
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -26,11 +28,45 @@
     <hr>
 
     <p>By signing up, you get personalized notes and resources from your specific grade and section.</p>
+
+    <br>
+
+    <!-- SIGN UP -->
+    <h2>Create Account</h2>
+    <input id="email" type="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+    <button class="custom-button" onclick="register()">Sign Up</button>
+
+    <br><br>
+
+    <!-- LOGIN -->
+    <h2>Login</h2>
+    <input id="loginEmail" type="email" placeholder="Email">
+    <input id="loginPassword" type="password" placeholder="Password">
+    <button class="custom-button" onclick="signin()">Login</button>
+
   </div>
 
   <div class="footer-brand">
     <h2>ClearNotes</h2>
   </div>
+
+  <!-- Connect buttons to Firebase -->
+  <script type="module">
+    import { signup, login } from "./firebase.js";
+
+    window.register = function () {
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+      signup(email, password);
+    };
+
+    window.signin = function () {
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+      login(email, password);
+    };
+  </script>
 
 </body>
 </html>
