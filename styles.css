@@ -1,14 +1,13 @@
-/* ===== ClearNotes Design System ===== */
+/* ===== ClearNotes Global Style ===== */
 
 :root {
-    --bg: #f6f8fb;
-    --card: #ffffff;
-    --primary: #4f46e5;
-    --primary-hover: #4338ca;
-    --text: #1f2937;
-    --subtext: #6b7280;
+    --bg: #f4f6fb;
+    --surface: #ffffff;
+    --text: #111827;
+    --muted: #4b5563;
+    --accent: #4f46e5;
+    --accent-hover: #4338ca;
     --border: #e5e7eb;
-    --radius: 14px;
 }
 
 /* Reset */
@@ -16,100 +15,95 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Inter", system-ui, Arial, sans-serif;
+    font-family: "Segoe UI", system-ui, sans-serif;
 }
 
 body {
     background: var(--bg);
     color: var(--text);
+    line-height: 1.65;
 }
 
-/* Layout container */
-.container {
-    width: min(1100px, 92%);
+/* Page width */
+main, section {
+    max-width: 1000px;
     margin: auto;
-    padding: 30px 0;
+    padding: 28px 22px;
 }
 
-/* Cards */
-.card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 22px;
-    box-shadow: 0 8px 22px rgba(0,0,0,0.06);
-    margin-bottom: 22px;
+/* Sections become panels automatically */
+section {
+    background: var(--surface);
+    border-radius: 12px;
+    margin-top: 26px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
 }
 
-/* Titles */
+/* Typography hierarchy */
 h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
 }
 
 h2 {
     font-size: 1.4rem;
-    margin-bottom: 8px;
+    margin-top: 35px;
+    margin-bottom: 12px;
+    border-left: 4px solid var(--accent);
+    padding-left: 12px;
+}
+
+h3 {
+    margin-top: 18px;
+    margin-bottom: 6px;
 }
 
 p {
-    color: var(--subtext);
-    line-height: 1.6;
+    color: var(--muted);
+    max-width: 70ch;
 }
 
-/* Buttons */
-.btn {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 12px 18px;
-    border-radius: 10px;
+/* Buttons — automatically applied to action links */
+a[href] {
     text-decoration: none;
-    font-weight: 500;
-    transition: 0.2s;
 }
 
-.btn:hover {
-    background: var(--primary-hover);
+a[href*=".html"] {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: white;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: 0.15s ease;
+}
+
+a[href*=".html"]:hover {
+    background: var(--accent-hover);
     transform: translateY(-1px);
 }
 
-/* Inputs */
-input, select, textarea {
+/* Forms */
+input, textarea, select {
     width: 100%;
-    padding: 12px;
-    border-radius: 10px;
-    border: 1px solid var(--border);
+    padding: 11px;
     margin-top: 6px;
-    margin-bottom: 16px;
-    font-size: 0.95rem;
+    margin-bottom: 14px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
 }
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: var(--primary);
+    border-color: var(--accent);
 }
 
-/* Navbar */
-.navbar {
-    background: white;
-    border-bottom: 1px solid var(--border);
-    padding: 14px 0;
-}
-
-.navbar a {
-    margin-right: 18px;
-    text-decoration: none;
-    color: var(--text);
-    font-weight: 500;
-}
-
-.navbar a:hover {
-    color: var(--primary);
-}
-
-/* Grid (dashboard boxes) */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
+/* Footer */
+footer {
+    text-align: center;
+    color: #6b7280;
+    margin: 50px 0 20px;
+    font-size: 0.9rem;
 }
