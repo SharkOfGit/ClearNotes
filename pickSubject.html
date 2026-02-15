@@ -2,45 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ClearNotes</title>
-
-  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pick a Subject — ClearNotes</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Favicon -->
   <link rel="icon" href="ClearNotesMiniLogo.png">
-
-<link rel="stylesheet" href="styles.css">
-
+  <link rel="stylesheet" href="styles.css">
 </head>
 
-<body>
+<body class="dashboard-body">
 
-<header>
-<h1>ClearNotes</h1>
-<p>Let's pick a subject to start with.</p>
+  <aside class="sidebar">
+    <span class="logo">ClearNotes</span>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="personalizedDashboard.html">📊 Dashboard</a>
+      <a href="pickSubject.html" class="active">📚 My Subjects</a>
+      <a href="study.html">✍️ Study Desk</a>
+      <a href="uploadnotes.html">📤 Upload</a>
+    </nav>
+  </aside>
 
-<div class="card">
-<h2>General Subjects</h2>
-<a href="ComputerScience.html"><button class="btn btn-primary">Computer Science</button></a>
-<a href="SocialScience.html"><button class="btn btn-primary">Social Science</button></a>
-<a href="English.html"><button class="btn btn-primary">English</button></a>
-</div>
+  <main class="dashboard-main">
+    <header class="page-header">
+      <div>
+        <h1>Pick a Subject</h1>
+        <p class="section-desc">Select a course to view available notes and resources.</p>
+      </div>
+    </header>
 
-<br>
+    <section class="section">
+      <h2 class="section-title">General Subjects</h2>
+      <div class="card-grid">
+        <a href="ComputerScience.html" class="subject-tile">
+          <div class="tile-icon">💻</div>
+          <h3>Computer Science</h3>
+          <span>View Notes →</span>
+        </a>
+        
+        <a href="SocialScience.html" class="subject-tile">
+          <div class="tile-icon">🌍</div>
+          <h3>Social Science</h3>
+          <span>View Notes →</span>
+        </a>
 
-<div class="card">
-<h2>Native Languages</h2>
-<a href="Hindi.html"><button class="btn btn-primary">Hindi</button></a>
-<a href="Malayalam.html"><button class="btn btn-primary">Malayalam</button></a>
-<a href="Tamil.html"><button class="btn btn-primary">Tamil</button></a>
-</div>
-</header>
+        <a href="English.html" class="subject-tile">
+          <div class="tile-icon">📖</div>
+          <h3>English</h3>
+          <span>View Notes →</span>
+        </a>
+      </div>
+    </section>
 
-<footer>
-  <p><b>ClearNotes</b> — Built by Sitheshwar M & Nithin J</p>
-  <p>Maintained by the community. Powered by curiosity.</p>
-</footer>
+    <section class="section" style="margin-top: 40px;">
+      <h2 class="section-title">Native Languages</h2>
+      <div class="card-grid">
+        <a href="Hindi.html" class="subject-tile">
+          <div class="tile-icon">🔤</div>
+          <h3>Hindi</h3>
+          <span>View Notes →</span>
+        </a>
 
+        <a href="Malayalam.html" class="subject-tile">
+          <div class="tile-icon">🖋️</div>
+          <h3>Malayalam</h3>
+          <span>View Notes →</span>
+        </a>
+
+        <a href="Tamil.html" class="subject-tile">
+          <div class="tile-icon">📜</div>
+          <h3>Tamil</h3>
+          <span>View Notes →</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
 </body>
 </html>
