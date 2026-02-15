@@ -450,3 +450,22 @@ video {
   font-size: 0.75rem;
   color: var(--muted);
 }
+
+.privacy-notice {
+  margin-top: 30px;
+  padding: 15px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.privacy-notice h3 {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+  color: var(--text);
+}
