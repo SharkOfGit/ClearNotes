@@ -1,13 +1,14 @@
-/* ===== ClearNotes Global Style ===== */
+/* ===== ClearNotes Professional UI System ===== */
 
 :root {
-    --bg: #f4f6fb;
+    --bg: #eef2ff;
     --surface: #ffffff;
-    --text: #111827;
-    --muted: #4b5563;
+    --surface-soft: #f8fafc;
+    --text: #0f172a;
+    --muted: #64748b;
     --accent: #4f46e5;
     --accent-hover: #4338ca;
-    --border: #e5e7eb;
+    --border: #e2e8f0;
 }
 
 /* Reset */
@@ -15,95 +16,127 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", system-ui, sans-serif;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background: var(--bg);
+    background: linear-gradient(135deg, #eef2ff, #f8fafc);
     color: var(--text);
-    line-height: 1.65;
+    line-height: 1.7;
 }
 
-/* Page width */
+/* Page container */
 main, section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 28px 22px;
+    max-width: 960px;
+    margin: 60px auto;
+    padding: 40px 35px;
 }
 
-/* Sections become panels automatically */
+/* Section panels */
 section {
     background: var(--surface);
-    border-radius: 12px;
-    margin-top: 26px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    border-radius: 18px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+    border: 1px solid var(--border);
+    transition: 0.2s ease;
 }
 
-/* Typography hierarchy */
+section:hover {
+    box-shadow: 0 25px 55px rgba(15, 23, 42, 0.12);
+}
+
+/* Typography */
 h1 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+    font-size: 2.6rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 15px;
 }
 
 h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: 600;
     margin-top: 35px;
-    margin-bottom: 12px;
-    border-left: 4px solid var(--accent);
-    padding-left: 12px;
+    margin-bottom: 14px;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+h2::after {
+    content: "";
+    width: 50px;
+    height: 3px;
+    background: var(--accent);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
 }
 
 h3 {
-    margin-top: 18px;
-    margin-bottom: 6px;
+    font-size: 1.1rem;
+    margin-top: 22px;
+    margin-bottom: 8px;
 }
 
 p {
     color: var(--muted);
-    max-width: 70ch;
+    max-width: 65ch;
+    margin-bottom: 12px;
 }
 
-/* Buttons — automatically applied to action links */
-a[href] {
+/* Links reset */
+a {
     text-decoration: none;
 }
 
-a[href*=".html"] {
+/* Primary action buttons */
+a[href*=".html"],
+button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 16px;
-    border-radius: 8px;
+    padding: 12px 20px;
+    border-radius: 10px;
     background: var(--accent);
-    color: white;
-    font-size: 0.95rem;
+    color: #ffffff;
     font-weight: 500;
-    transition: 0.15s ease;
+    font-size: 0.95rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
-a[href*=".html"]:hover {
+a[href*=".html"]:hover,
+button:hover {
     background: var(--accent-hover);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.3);
 }
 
 /* Forms */
 input, textarea, select {
     width: 100%;
-    padding: 11px;
-    margin-top: 6px;
-    margin-bottom: 14px;
-    border-radius: 8px;
+    padding: 12px 14px;
+    margin-top: 8px;
+    margin-bottom: 18px;
+    border-radius: 10px;
     border: 1px solid var(--border);
+    background: var(--surface-soft);
+    font-size: 0.95rem;
+    transition: 0.2s ease;
 }
 
 input:focus, textarea:focus {
     outline: none;
     border-color: var(--accent);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
 }
 
 /* Footer */
 footer {
     text-align: center;
-    color: #6b7280;
-    margin: 50px 0 20px;
+    color: var(--muted);
+    margin: 60px 0 30px;
     font-size: 0.9rem;
 }
+
