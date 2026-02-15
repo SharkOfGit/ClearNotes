@@ -243,3 +243,45 @@ video {
   font-size: 0.85rem;
   color: var(--muted);
 }
+
+/* Dashboard Typography & Spacing */
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text);
+  border-bottom: 2px solid var(--border);
+  padding-bottom: 8px;
+}
+
+/* Subject Card Styling */
+.subject-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+}
+
+.book-preview {
+  width: 120px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 10px 0;
+}
+
+.book-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sidebar a.active {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+}
+
+.w-100 { width: 100%; }
