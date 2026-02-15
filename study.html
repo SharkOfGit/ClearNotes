@@ -1,84 +1,97 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ClearNotes</title>
-
-  <!-- Fonts -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Desk — ClearNotes</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Favicon -->
   <link rel="icon" href="ClearNotesMiniLogo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-<link rel="stylesheet" href="styles.css">
+<body class="dashboard-body">
 
+  <aside class="sidebar">
+    <span class="logo">ClearNotes</span>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="personalizedDashboard.html">📊 Dashboard</a>
+      <a href="pickSubject.html">📚 My Subjects</a>
+      <a href="study.html" class="active">✍️ Study Desk</a>
+      <a href="uploadnotes.html">📤 Upload</a>
+    </nav>
+  </aside>
 
+  <main class="dashboard-main study-canvas">
+    <header class="page-header">
+      <div>
+        <h1>Study Desk</h1>
+        <p class="section-desc">Drag and organize your tools for a focused session.</p>
+      </div>
+    </header>
 
-<TITLE>ClearNotes - Study Desk</TITLE>
-</HEAD>
+    <div class="window" id="win1">
+      <div class="titlebar"><p>📘 AI Study Buddy</p></div>
+      <div class="window-content">
+        <iframe src="https://justusi-study-companion-2.hf.space" frameborder="0"></iframe>
+      </div>
+    </div>
 
-<BODY>
-<h1><u>Study Desk</u></h1>
+    <div class="window" id="win2">
+      <div class="titlebar"><p>🚀 Focus Mode</p></div>
+      <div class="window-content detox-box">
+        <p>Take a chance to wind down from distractions and focus on studies.</p>
+        <a href="detox.html" class="btn btn-primary">Start Detox</a>
+      </div>
+    </div>
 
+    <footer class="study-footer">
+      <p>Study Buddy by Thimmapuram Murali via HuggingFace</p>
+    </footer>
+  </main>
 
+  <script>
+    // --- Window Draggable Logic ---
+    let activeWindow = null;
+    let offsetX = 0;
+    let offsetY = 0;
+    let zIndexCounter = 100;
 
-<div class="window" id="win1">
-  <div class="titlebar"><p>📘 Study Buddy</p></div>
-<iframe
-	src="https://justusi-study-companion-2.hf.space"
-	frameborder="0"
-	width="750"
-	height="350"
-></iframe>
+    document.querySelectorAll(".window").forEach(win => {
+      const bar = win.querySelector(".titlebar");
 
-</div>
+      bar.addEventListener("mousedown", e => {
+        activeWindow = win;
+        // Calculate offset so the window doesn't "jump" to the mouse corner
+        const rect = win.getBoundingClientRect();
+        offsetX = e.clientX - rect.left;
+        offsetY = e.clientY - rect.top;
 
-<div class="window" id="win2">
-<div class="titlebar"><p>Detox</p></div>
-<p>Take a chance to wind down from distractions and <br>focus on studies, materialistically and practically.</p>
+        win.style.zIndex = ++zIndexCounter;
+        bar.style.cursor = "grabbing";
+        
+        // Prevent text selection while dragging
+        e.preventDefault();
+      });
+    });
 
-<a href="detox.html"><button class="custom-button">Detox 🚀</button></a>
-</div>
+    document.addEventListener("mousemove", e => {
+      if (!activeWindow) return;
+      
+      // Calculate new position
+      let x = e.clientX - offsetX;
+      let y = e.clientY - offsetY;
 
-<script>
-let activeWindow = null;
-let offsetX = 0;
-let offsetY = 0;
-let zIndexCounter = 100;
+      activeWindow.style.left = x + "px";
+      activeWindow.style.top = y + "px";
+      activeWindow.style.position = "fixed"; // Keep it relative to screen
+    });
 
-document.querySelectorAll(".window").forEach(win => {
-  const bar = win.querySelector(".titlebar");
-
-  bar.addEventListener("mousedown", e => {
-    activeWindow = win;
-    offsetX = e.clientX - win.offsetLeft;
-    offsetY = e.clientY - win.offsetTop;
-
-    // bring window to front
-    win.style.zIndex = ++zIndexCounter;
-
-    bar.style.cursor = "grabbing";
-  });
-});
-
-document.addEventListener("mousemove", e => {
-  if (!activeWindow) return;
-
-  activeWindow.style.left = (e.clientX - offsetX) + "px";
-  activeWindow.style.top = (e.clientY - offsetY) + "px";
-});
-
-document.addEventListener("mouseup", () => {
-  if (!activeWindow) return;
-
-  const bar = activeWindow.querySelector(".titlebar");
-  bar.style.cursor = "grab";
-  activeWindow = null;
-});
-</script>
-
-<br>
-<hr>
-
-<h3><b>Study Buddy</b> feature by Thimmapuram Murali "AI Study Buddy"</h3>
-<h3>Credits to HuggingFace Inc.</h3>
+    document.addEventListener("mouseup", () => {
+      if (!activeWindow) return;
+      activeWindow.querySelector(".titlebar").style.cursor = "grab";
+      activeWindow = null;
+    });
+  </script>
+</body>
+</html>
