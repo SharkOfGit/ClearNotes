@@ -1,61 +1,91 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — ClearNotes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="ClearNotesMiniLogo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
 
-<HEAD>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="Notes360-MiniLogo.png">
-<link rel="stylesheet" href="styles.css">
+<body class="dashboard-body">
 
+  <aside class="sidebar">
+    <span class="logo" style="color: white; margin-bottom: 2.5rem; display: block;">ClearNotes</span>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="personalizedDashboard.html" class="active">📊 Dashboard</a>
+      <a href="pickSubject.html">📚 My Subjects</a>
+      <a href="study.html">✍️ Study Desk</a>
+      <a href="signup.html" style="margin-top: auto; opacity: 0.7;">🚪 Logout</a>
+    </nav>
+  </aside>
 
-<TITLE>Notes360 - Landing Page</TITLE>
-</HEAD>
+  <main class="dashboard-main">
+    <header class="page-header">
+      <div>
+        <h1>Personalized Dashboard</h1>
+        <p class="section-desc">
+          All you need for <strong>Grade <span id="grade-display"></span> <span id="section-display"></span></strong> 
+          at <em><span id="school-name"></span></em>
+        </p>
+      </div>
+    </header>
 
-<BODY>
+    <section class="section">
+      <h2 class="section-title">Academic Syllabus</h2>
+      <div class="card-grid">
+        
+        <article class="card subject-card">
+          <div class="subject-info">
+            <h3>Science</h3>
+            <p>NCERT Science Textbook</p>
+          </div>
+          
+          <div class="book-preview">
+            <img src="https://ncert.nic.in/textbook/pdf/iesc1cc.jpg" alt="Science Textbook Cover">
+          </div>
 
-<h1><u>Personalized Dashboard</u></h1>
-<h3>All you need from <span id="grade-display"></span><span id="section-display"></span> of <i><span id="school-name"></span></i></h3>
+          <button id="search-info" class="btn btn-secondary w-100">
+            Search PDF on Google
+          </button>
+        </article>
 
-<hr style="border: none; height: 5px; background-color: #333;">
+        <article class="card subject-card" style="border-style: dashed; display: flex; align-items: center; justify-content: center; opacity: 0.5;">
+          <p>More subjects coming soon...</p>
+        </article>
 
-<h2>Syllabus</h2>
-<div class="grid-container">
-<div class="grid-item">
-<h3>Science</h3>
-<hr>
-<p>NCERT Science Textbook for Class 9</p>
-<div class="fixed-container">
-<img src="https://ncert.nic.in/textbook/pdf/iesc1cc.jpg" alt="book-cover">
-</div>
-<br>
-<button id="search-info">
-  Search textbook on <br><div class="simpleimg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/50px-Google_2015_logo.svg.png"></div>
-</button>
-</div>
-</div>
+      </div>
+    </section>
 
-<script>
-const school = JSON.parse(localStorage.getItem("chosenSchool"));
-const grade = localStorage.getItem("chosenGrade");
-const section = localStorage.getItem("chosenSection");
+    <section class="section">
+      <h2 class="section-title">Upload Leaderboard</h2>
+      <div class="card">
+        <p>The leading note uploaders from your grade appear here.</p>
+        <div class="topshape" id="leaderboard-container">
+          <p style="padding: 20px; text-align: center; color: var(--muted);">Scanning for contributors...</p>
+        </div>
+      </div>
+    </section>
+  </main>
 
-document.getElementById("school-name").textContent = school ? school.name : "Not selected";
-document.getElementById("grade-display").textContent = grade ? grade : "Not selected";
-document.getElementById("section-display").textContent = section ? " " + section : "";
+  <script>
+    // Data Loading Logic
+    const school = JSON.parse(localStorage.getItem("chosenSchool"));
+    const grade = localStorage.getItem("chosenGrade");
+    const section = localStorage.getItem("chosenSection");
 
-document.getElementById("search-info").onclick = () => {
+    document.getElementById("school-name").textContent = school ? school.name : "Not selected";
+    document.getElementById("grade-display").textContent = grade ? grade : "—";
+    document.getElementById("section-display").textContent = section ? section : "";
 
-const query = "NCERT Science Textbook Class 9 PDF";
-
-const url = "https://www.google.com/search?q=" + encodeURIComponent(query);
-window.open(url, "_blank");
-};
-</script>
-
-<hr style="border: none; height: 5px; background-color: #333;">
-
-<h2>Upload Leaderboard</h2>
-<p>The leading note uploaders from your grade.</p>
-
-<div class="topshape">
-</div>
-
-</BODY>
+    // Search Logic
+    document.getElementById("search-info").onclick = () => {
+      const query = `NCERT Science Textbook Class ${grade || 9} PDF`;
+      const url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+      window.open(url, "_blank");
+    };
+  </script>
+</body>
+</html>
