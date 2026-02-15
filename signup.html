@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClearNotes - Login & Sign Up</title>
+  <title>ClearNotes - Secure Login & Sign Up</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="ClearNotesMiniLogo.png">
   <link rel="stylesheet" href="styles.css">
@@ -14,7 +14,7 @@
     <div class="auth-card">
       <header class="auth-header">
         <h1>ClearNotes</h1>
-        <p>Let's start by choosing your school!</p>
+        <p>A student-led academic resource platform.</p>
         <a href="maps.html" class="btn btn-primary" style="width: 100%; margin-top: 10px;">📍 Choose your school</a>
       </header>
 
@@ -22,11 +22,11 @@
 
       <section class="auth-section">
         <h2>Create Account</h2>
-        <p class="auth-hint">Get personalized notes for your grade and section.</p>
+        <p class="auth-hint">Your data is secured via Firebase Authentication.</p>
         
         <div class="form-group">
-          <input id="email" type="email" placeholder="Email">
-          <input id="password" type="password" placeholder="Password">
+          <input id="email" type="email" placeholder="Email" autocomplete="username">
+          <input id="password" type="password" placeholder="Password" autocomplete="new-password">
           <label class="checkbox-label">
             <input type="checkbox" onclick="togglePass('password')"> Show password
           </label>
@@ -40,8 +40,8 @@
       <section class="auth-section">
         <h2>Welcome Back</h2>
         <div class="form-group">
-          <input id="loginEmail" type="email" placeholder="Email">
-          <input id="loginPassword" type="password" placeholder="Password">
+          <input id="loginEmail" type="email" placeholder="Email" autocomplete="username">
+          <input id="loginPassword" type="password" placeholder="Password" autocomplete="current-password">
           <label class="checkbox-label">
             <input type="checkbox" onclick="togglePass('loginPassword')"> Show password
           </label>
@@ -49,10 +49,15 @@
         
         <button class="btn btn-secondary w-100" onclick="signin()">Login</button>
       </section>
+
+      <div class="privacy-notice">
+        <h3>Privacy & Data Usage</h3>
+        <p>By using ClearNotes, you agree that we use <strong>Firebase</strong> to securely manage your credentials. We do not sell your data or use it for tracking. We only store your Grade and School locally to personalize your experience.</p>
+      </div>
     </div>
 
     <footer class="auth-footer">
-      <p>Built by Sitheshwar M and Nithin J</p>
+      <p>Built by Sitheshwar M and Nithin J | <a href="index.html">Back to Home</a></p>
     </footer>
   </main>
 
