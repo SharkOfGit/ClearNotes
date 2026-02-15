@@ -3,90 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Firebase loader -->
-  <script type="module" src="firebase.js"></script>
-
-  <title>ClearNotes - Login</title>
-  
-  <!-- Fonts -->
+  <title>ClearNotes - Login & Sign Up</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="ClearNotesMiniLogo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
+<body class="auth-page">
 
-<body>
+  <main class="auth-container">
+    <div class="auth-card">
+      <header class="auth-header">
+        <h1>ClearNotes</h1>
+        <p>Let's start by choosing your school!</p>
+        <a href="maps.html" class="btn btn-primary" style="width: 100%; margin-top: 10px;">📍 Choose your school</a>
+      </header>
 
-  <div class="login-shape">
-    <h1>ClearNotes</h1>
-    <p><b>Let's start by choosing your school!</b></p>
-    
-    <a href="maps.html" style="text-decoration: none;">
-      <button class="custom-button">Choose your school</button>
-    </a>
+      <hr class="divider">
 
-    <hr>
+      <section class="auth-section">
+        <h2>Create Account</h2>
+        <p class="auth-hint">Get personalized notes for your grade and section.</p>
+        
+        <div class="form-group">
+          <input id="email" type="email" placeholder="Email">
+          <input id="password" type="password" placeholder="Password">
+          <label class="checkbox-label">
+            <input type="checkbox" onclick="togglePass('password')"> Show password
+          </label>
+        </div>
+        
+        <button class="btn btn-primary w-100" onclick="register()">Sign Up</button>
+      </section>
 
-    <p>By signing up, you get personalized notes and resources from your specific grade and section.</p>
+      <div class="auth-separator"><span>OR</span></div>
 
-    <br>
+      <section class="auth-section">
+        <h2>Welcome Back</h2>
+        <div class="form-group">
+          <input id="loginEmail" type="email" placeholder="Email">
+          <input id="loginPassword" type="password" placeholder="Password">
+          <label class="checkbox-label">
+            <input type="checkbox" onclick="togglePass('loginPassword')"> Show password
+          </label>
+        </div>
+        
+        <button class="btn btn-secondary w-100" onclick="signin()">Login</button>
+      </section>
+    </div>
 
-    <!-- SIGN UP -->
-    <h2>Create Account</h2>
-    <input id="email" type="email" placeholder="Email">
+    <footer class="auth-footer">
+      <p>Built by Sitheshwar M and Nithin J</p>
+    </footer>
+  </main>
 
-    <input id="password" type="password" placeholder="Password">
-    <label style="font-size:14px;">
-      <input type="checkbox" onclick="togglePass('password')"> Show password
-    </label>
-
-    <br><br>
-    <button class="custom-button" onclick="register()">Sign Up</button>
-
-    <br><br><br>
-
-    <!-- LOGIN -->
-    <h2>Login</h2>
-    <input id="loginEmail" type="email" placeholder="Email">
-
-    <input id="loginPassword" type="password" placeholder="Password">
-    <label style="font-size:14px;">
-      <input type="checkbox" onclick="togglePass('loginPassword')"> Show password
-    </label>
-
-    <br><br>
-    <button class="custom-button" onclick="signin()">Login</button>
-
-  </div>
-
-  <div class="footer-brand">
-    <h2>ClearNotes</h2>
-  </div>
-
-  <!-- Firebase connect -->
+  <script type="module" src="firebase.js"></script>
   <script type="module">
     import { signup, login } from "./firebase.js";
-
-    window.register = function () {
-      const email = document.getElementById("email").value;
-      const password = document.getElementById("password").value;
-      signup(email, password);
-    };
-
-    window.signin = function () {
-      const email = document.getElementById("loginEmail").value;
-      const password = document.getElementById("loginPassword").value;
-      login(email, password);
-    };
+    window.register = () => signup(document.getElementById("email").value, document.getElementById("password").value);
+    window.signin = () => login(document.getElementById("loginEmail").value, document.getElementById("loginPassword").value);
   </script>
-
-  <!-- Show/Hide password logic -->
   <script>
     function togglePass(id) {
       const field = document.getElementById(id);
       field.type = field.type === "password" ? "text" : "password";
     }
   </script>
-
 </body>
 </html>
