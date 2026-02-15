@@ -1,54 +1,34 @@
-<!DOCTYPE html>
+  ]\<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- SEO -->
-  <title>ClearNotes — Organize, Study, and Share Academic Resources</title>
-  <meta name="description" content="ClearNotes helps students organize notes, access academic resources, and collaborate through a clean, distraction-free study platform." />
-  <meta name="keywords" content="notes, study platform, academic resources, students, learning, education" />
-  <meta name="author" content="Sitheshwar M and Nithin J" />
-
-  <!-- Fonts -->
+  <title>ClearNotes — Organize, Study, and Share</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" href="ClearNotesMiniLogo.png">
-
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
-
-<header class="site-header">
-  <nav class="nav" role="navigation" aria-label="Main navigation">
+<nav class="navbar">
+  <div class="container nav-flex">
     <span class="logo">ClearNotes</span>
     <div class="nav-actions">
-      <a href="signup.html" class="btn btn-primary">Create an account</a>
-      <a href="personalizedDashboard.html" class="btn btn-secondary">Go to dashboard</a>
+      <a href="signup.html" class="btn btn-primary">Create account</a>
+      <a href="personalizedDashboard.html" class="btn btn-secondary">Dashboard</a>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <div class="hero">
+<header class="hero">
+  <div class="container">
     <h1>ClearNotes</h1>
-    <p>
-      A focused platform to organize, study, and share academic resources —
-      built for students who actually want to learn.
-    </p>
+    <p>A focused platform to organize, study, and share academic resources.</p>
   </div>
 </header>
 
-<main id="main-content">
-
-  <section aria-labelledby="control-center-heading">
-    <h2 id="control-center-heading">Your Control Center</h2>
-    <p class="section-desc">
-      Everything you need to manage subjects, notes, and study material — without distractions.
-    </p>
-
+<main id="main-content" class="container">
+  <section class="section">
+    <h2>Your Control Center</h2>
     <div class="card-grid">
       <article class="card">
         <h3>Personalized Notes</h3>
@@ -58,67 +38,33 @@
 
       <article class="card">
         <h3>Study Desk</h3>
-        <p>Your digital workspace for focused study sessions and organization.</p>
+        <p>Your digital workspace for focused study sessions.</p>
         <a href="study.html" class="btn btn-secondary">Open study desk</a>
       </article>
 
       <article class="card">
         <h3>Contribute Resources</h3>
-        <p>Share your notes and help other students learn more effectively.</p>
+        <p>Share your notes and help other students.</p>
         <a href="uploadnotes.html" class="btn btn-secondary">Upload notes</a>
       </article>
     </div>
   </section>
 
-  <section aria-labelledby="video-heading">
-    <h2 id="video-heading">See ClearNotes in Action</h2>
-
+  <section class="section">
+    <h2>See ClearNotes in Action</h2>
     <div class="video-wrapper">
-      <video controls muted loop aria-describedby="video-desc">
+      <video controls muted loop>
         <source src="Ad.mp4" type="video/mp4">
-        <track kind="captions" src="captions.vtt" srclang="en" label="English captions">
         Your browser does not support the video tag.
       </video>
     </div>
-
-    <p id="video-desc" class="section-desc">
-      A short overview of how ClearNotes helps students stay organized and focused.
-    </p>
   </section>
-
-  <section aria-labelledby="resources-heading">
-    <h2 id="resources-heading">What You’ll Find</h2>
-    <p class="section-desc">Practical academic material — no clutter, no noise.</p>
-
-    <div class="card-grid">
-      <article class="card"><h3>Textbooks</h3></article>
-      <article class="card"><h3>Sticky Notes</h3></article>
-      <article class="card"><h3>Worksheets</h3></article>
-      <article class="card"><h3>Classwork Archives</h3></article>
-    </div>
-  </section>
-
-  <section aria-labelledby="quotes-heading">
-    <h2 id="quotes-heading">Ideas That Shape Learning</h2>
-
-    <div class="card-grid">
-      <blockquote class="quote">
-        <h3>Jiddu Krishnamurti</h3>
-        <p>“The whole of life is a process of learning.”</p>
-      </blockquote>
-
-      <blockquote class="quote">
-        <h3>Peter Drucker</h3>
-        <p>“The most important task is to teach people how to learn.”</p>
-      </blockquote>
-    </div>
-  </section>
-
 </main>
 
-<footer>
-  <p><strong>ClearNotes</strong> — Built by Sitheshwar M and Nithin J</p>
-  <p>Maintained by the community. Powered by curiosity.</p>
+<footer class="footer">
+  <div class="container">
+    <p><strong>ClearNotes</strong> — Built by Sitheshwar M and Nithin J</p>
+  </div>
 </footer>
 
 </body>
