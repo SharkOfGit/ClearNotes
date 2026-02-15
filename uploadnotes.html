@@ -1,60 +1,97 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="Notes360-MiniLogo.png">
-<link rel="stylesheet" href="styles.css">
-
-<title>Notes360 - Upload Notes</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Upload Notes — ClearNotes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="ClearNotesMiniLogo.png">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-<h1>Your contribution matters.</h1>
 
-<h2><i>This is not a server version of Notes360, but just a testing page for uploads.</i></h2>
-<hr>
+<body class="dashboard-body">
 
-<h2>Upload a Note</h2>
+  <aside class="sidebar">
+    <span class="logo">ClearNotes</span>
+    <nav>
+      <a href="index.html">🏠 Home</a>
+      <a href="personalizedDashboard.html">📊 Dashboard</a>
+      <a href="pickSubject.html">📚 My Subjects</a>
+      <a href="study.html">✍️ Study Desk</a>
+      <a href="uploadnotes.html" class="active">📤 Upload</a>
+    </nav>
+  </aside>
 
-<form action="/uploadnotes.html" method="POST" enctype="multipart/form-data">
+  <main class="dashboard-main">
+    <header class="page-header">
+      <div>
+        <h1>Your contribution matters</h1>
+        <p class="section-desc">Share resources with your classmates at <span id="school-info-display" style="font-weight: 600;"></span>.</p>
+      </div>
+    </header>
 
-  <label><b>Your Name (shown to classmates):</b></label><br>
-  <input type="text" name="uploader" required><br><br>
+    <div class="container-narrow">
+      <div class="card">
+        <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 20px;">
+          <em>Note: This is a testing page for uploads.</em>
+        </p>
 
-  <label><b>Subject:</b></label><br>
-  <select name="subject" required>
-    <option value="" disabled selected>Select subject</option>
-    <option>Science</option>
-    <option>Maths</option>
-    <option>Malayalam</option>
-    <option>English</option>
-    <option>Social Science</option>
-  </select><br><br>
+        <form action="/uploadnotes.html" method="POST" enctype="multipart/form-data">
+          
+          <div class="form-group">
+            <label>Your Name (shown to classmates)</label>
+            <input type="text" name="uploader" placeholder="Enter your full name" required>
+          </div>
 
-  <label><b>Select PDF:</b></label><br>
-  <input type="file" name="note" accept="application/pdf" required><br><br>
+          <div class="form-group">
+            <label>Subject</label>
+            <select name="subject" required>
+              <option value="" disabled selected>Select subject</option>
+              <option>Science</option>
+              <option>Maths</option>
+              <option>Malayalam</option>
+              <option>English</option>
+              <option>Social Science</option>
+            </select>
+          </div>
 
-  <!-- Hidden fields auto-filled from signup -->
-  <input type="hidden" name="school" id="school-field">
-  <input type="hidden" name="grade" id="grade-field">
-  <input type="hidden" name="section" id="section-field">
+          <div class="form-group">
+            <label>Select PDF</label>
+            <div class="file-upload-box">
+              <input type="file" name="note" accept="application/pdf" required>
+              <p>Click to select PDF file</p>
+            </div>
+          </div>
 
-  <input type="submit" value="Upload Note" class="custom-button">
-</form>
+          <input type="hidden" name="school" id="school-field">
+          <input type="hidden" name="grade" id="grade-field">
+          <input type="hidden" name="section" id="section-field">
 
-<script>
-  const school = JSON.parse(localStorage.getItem("chosenSchool"));
-  const grade = localStorage.getItem("chosenGrade");
-  const section = localStorage.getItem("chosenSection");
+          <button type="submit" class="btn btn-primary w-100">Upload Note</button>
+        </form>
+      </div>
+      
+      <div class="info-box">
+        <h4>Submission Tip</h4>
+        <p>Ensure your PDF is clear and legible for the best learning experience.</p>
+      </div>
+    </div>
+  </main>
 
-  if (!school || !grade || !section) {
-    alert("Signup information missing. Please sign up again.");
-    window.location.href = "signup.html"; // or first signup page
-  }
+  <script>
+    const school = JSON.parse(localStorage.getItem("chosenSchool"));
+    const grade = localStorage.getItem("chosenGrade");
+    const section = localStorage.getItem("chosenSection");
 
-  document.getElementById("school-field").value = school.name;
-  document.getElementById("grade-field").value = grade;
-  document.getElementById("section-field").value = section;
-</script>
+    if (!school || !grade || !section) {
+      alert("Information missing. Please sign up.");
+      window.location.href = "signup.html";
+    }
 
+    document.getElementById("school-info-display").textContent = school.name;
+    document.getElementById("school-field").value = school.name;
+    document.getElementById("grade-field").value = grade;
+    document.getElementById("section-field").value = section;
+  </script>
 </body>
 </html>
