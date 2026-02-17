@@ -30,19 +30,19 @@
     <header class="dashboard-header">
       <div class="welcome-text">
         <h1 id="greeting">Welcome back!</h1>
-        <p>You are viewing <strong>Grade <span id="grade-display"></span></strong> at <em id="school-name"></em></p>
+        <p>Viewing <strong>Grade <span id="grade-display"></span></strong> • <span id="school-name"></span></p>
       </div>
       <div class="live-clock" id="clock">00:00:00</div>
     </header>
 
-    <div class="stats-row">
+    <div class="stats-grid">
        <div class="stat-card">
-          <small>Active Subject</small>
-          <p>Science</p>
+          <span class="stat-label">Current Goal</span>
+          <span class="stat-value">Science</span>
        </div>
        <div class="stat-card">
-          <small>Resources</small>
-          <p>NCERT Class 9</p>
+          <span class="stat-label">Resource Level</span>
+          <span class="stat-value">NCERT Class <span id="grade-val">9</span></span>
        </div>
     </div>
 
@@ -50,17 +50,23 @@
       <h2 class="section-title">Quick Actions</h2>
       <div class="card-grid">
         <article class="card subject-card">
-          <h3>Science Textbook</h3>
-          <div class="book-preview">
-            <img src="https://ncert.nic.in/textbook/pdf/iesc1cc.jpg" alt="Cover">
+          <div class="card-content">
+            <h3>Science Textbook</h3>
+            <p>Instant access to your PDF.</p>
+            <div class="book-preview">
+              <img src="https://ncert.nic.in/textbook/pdf/iesc1cc.jpg" alt="Cover">
+            </div>
+            <button id="search-info" class="btn btn-primary w-100">Get PDF</button>
           </div>
-          <button id="search-info" class="btn btn-primary w-100">Get PDF</button>
         </article>
 
         <article class="card study-card">
-           <h3>Launch Study Buddy</h3>
-           <p>Open your AI-powered companion.</p>
-           <a href="study.html" class="btn btn-secondary w-100">Open Desk</a>
+          <div class="card-content">
+           <h3>Study Desk</h3>
+           <p>Open your interactive workspace and AI tools.</p>
+           <div class="feature-icon">✨</div>
+           <a href="study.html" class="btn btn-secondary w-100">Enter Study Desk</a>
+          </div>
         </article>
       </div>
     </section>
@@ -74,16 +80,15 @@
 
     document.getElementById("school-name").textContent = school.name;
     document.getElementById("grade-display").textContent = grade;
+    document.getElementById("grade-val").textContent = grade;
 
     // --- LIVE CLOCK ---
     function updateClock() {
       const now = new Date();
-      document.getElementById("clock").textContent = now.toLocaleTimeString();
+      document.getElementById("clock").textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
       
       const hours = now.getHours();
-      let greet = "Good Morning";
-      if(hours >= 12) greet = "Good Afternoon";
-      if(hours >= 17) greet = "Good Evening";
+      let greet = (hours < 12) ? "Good Morning" : (hours < 17) ? "Good Afternoon" : "Good Evening";
       document.getElementById("greeting").textContent = `${greet}, Student!`;
     }
     setInterval(updateClock, 1000);
