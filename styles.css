@@ -385,3 +385,111 @@ select {
   border: 8px solid white;
   overflow: hidden;
 }
+
+/* --- Landing Page Luxury --- */
+.landing-page {
+  background-color: #ffffff;
+  background-image: radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0, transparent 50%), 
+                    radial-gradient(at 100% 100%, rgba(79, 70, 229, 0.05) 0, transparent 50%);
+}
+
+.glass-nav {
+  position: fixed;
+  top: 0; width: 100%;
+  padding: 1.2rem 0;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  z-index: 1000;
+}
+
+.hero-section {
+  padding: 160px 0 80px;
+  text-align: center;
+}
+
+.promo-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  background: #eef2ff;
+  color: #4338ca;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #0f172a;
+  margin-bottom: 24px;
+}
+
+.hero-title span {
+  background: linear-gradient(90deg, #4f46e5, #9333ea);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #64748b;
+  max-width: 650px;
+  margin: 0 auto 40px;
+}
+
+.hero-cta-group {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+.btn-xl {
+  padding: 16px 36px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+}
+
+.btn-ghost {
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Feature Grid */
+.section-intro { text-align: center; margin-bottom: 50px; }
+.section-intro h2 { font-size: 2.5rem; margin-bottom: 10px; }
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.f-card {
+  padding: 40px;
+  background: #f8fafc;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  transition: 0.3s;
+}
+
+.f-card:hover { transform: translateY(-10px); border-color: #4f46e5; }
+.f-icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Video Window Styling */
+.video-window {
+  background: #0f172a;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+}
+
+.window-dots {
+  display: flex; gap: 6px; padding: 10px;
+}
+
+.window-dots span {
+  width: 8px; height: 8px; border-radius: 50%; background: #334155;
+}
