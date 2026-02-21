@@ -1,81 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Hub — ClearNotes</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="hub-page">
+<body class="hub-layout">
 
-<nav class="glass-nav">
-  <div class="container nav-flex">
-    <span class="logo">Clear<span>Notes</span></span>
-    <div class="nav-actions">
-      <a href="dashboard.html" class="nav-link">Dashboard</a>
-      <a href="study.html" class="btn btn-primary btn-sm">Resume Session</a>
+  <nav class="sidebar glass-panel">
+    <div class="logo">Clear<span>Notes</span></div>
+    <div class="nav-group">
+      <a href="dashboard.html">📊 Dashboard</a>
+      <a href="hub.html" class="active">💠 The Hub</a>
+      <a href="study.html">⚡ Study Desk</a>
     </div>
-  </div>
-</nav>
-
-<header class="hub-hero">
-  <div class="container">
-    <div class="status-pill">
-      <span class="pulse-dot"></span> Central Repository
+    <div class="sidebar-footer">
+      <a href="signup.html" class="logout-btn">🚪 Exit</a>
     </div>
-    <h1 class="hero-title">The Study <span>Hub.</span></h1>
-    <p class="hero-subtitle">Access your personalized curriculum, deep-work tools, and community contributions in one unified interface.</p>
-  </div>
-</header>
+  </nav>
 
-<main class="container hub-content">
-  <div class="section-intro">
-    <h2 class="sub-heading">Command Center</h2>
-    <p>Select a module to begin your high-performance session.</p>
-  </div>
-  
-  <div class="bento-grid">
-    <article class="f-card glass-panel">
-      <div class="card-glow"></div>
-      <div class="f-icon-wrap">📘</div>
-      <div class="card-info">
-        <h3>Smart Library</h3>
-        <p>Your grade-specific NCERT guides and community-uploaded summaries.</p>
+  <main class="hub-viewport">
+    
+    <header class="hub-header">
+      <div class="header-content">
+        <span class="eyebrow">Discovery Hub</span>
+        <h1 class="mega-title">Everything <span>Synced.</span></h1>
+        <p class="hero-subtext">Select a specialized module to continue your session.</p>
       </div>
-      <a href="pickSubject.html" class="btn btn-outline w-100">Browse Subjects</a>
-    </article>
+    </header>
 
-    <article class="f-card glass-panel featured-card">
-      <div class="f-icon-wrap">⚡</div>
-      <div class="card-info">
-        <h3>Focus Workspace</h3>
-        <p>Enter the immersive Study Desk with AI Buddy and Zen Focus tools enabled.</p>
+    <section class="module-grid">
+      
+      <div class="module-card glass-panel" onclick="location.href='pickSubject.html'">
+        <div class="module-info">
+          <div class="module-tag">Resource</div>
+          <h3>Smart Library</h3>
+          <p>Curated NCERT materials and community-driven notes repository.</p>
+        </div>
+        <div class="module-action">Browse Library →</div>
       </div>
-      <a href="study.html" class="btn btn-primary w-100">Launch Desk</a>
-    </article>
 
-    <article class="f-card glass-panel">
-      <div class="f-icon-wrap">🚀</div>
-      <div class="card-info">
-        <h3>Community Feed</h3>
-        <p>Contribute your notes to the repository and climb the leaderboard rank.</p>
+      <div class="module-card glass-panel featured" onclick="location.href='study.html'">
+        <div class="module-info">
+          <div class="module-tag">Deep Work</div>
+          <h3>Study Desk</h3>
+          <p>The immersive workspace. AI Study Buddy and Focus Mode ready.</p>
+        </div>
+        <div class="module-action">Launch Session →</div>
       </div>
-      <a href="uploadnotes.html" class="btn btn-outline w-100">Contribute Now</a>
-    </article>
-  </div>
-</main>
 
-<footer class="modern-footer">
-  <div class="container footer-flex">
-    <p>© 2026 ClearNotes</p>
-    <div class="footer-links">
-      <span>Sitheshwar M</span>
-      <span class="divider">/</span>
-      <span>Nithin J</span>
-    </div>
-  </div>
-</footer>
+      <div class="module-card glass-panel" onclick="location.href='uploadnotes.html'">
+        <div class="module-info">
+          <div class="module-tag">Community</div>
+          <h3>Contribute</h3>
+          <p>Upload your own high-quality notes and climb the leaderboard.</p>
+        </div>
+        <div class="module-action">Upload Notes →</div>
+      </div>
+
+    </section>
+
+    <footer class="hub-footer">
+      <p>© 2026 ClearNotes </p>
+      <p> Crafted by Sitheshwar M and Nithin J</p>
+      <div class="tech-stack">Encrypted • Real-time • AI-Enhanced</div>
+    </footer>
+
+  </main>
 
 </body>
 </html>
