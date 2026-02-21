@@ -528,3 +528,112 @@ select {
 }
 
 .mt-10 { margin-top: 10px; }
+/* ===============================
+   HUB SPECIFIC ADDITIONS (The Fix)
+================================= */
+
+/* Layout for the Hub Shell */
+.hub-layout {
+  display: flex;
+  background: var(--bg);
+  min-height: 100vh;
+}
+
+.hub-viewport {
+  flex: 1;
+  margin-left: 260px; /* Matches your sidebar width */
+  padding: 60px;
+  background: #f8fafc;
+}
+
+/* Typography for the Hub */
+.hub-header {
+  margin-bottom: 50px;
+}
+
+.eyebrow {
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 700;
+  font-size: 0.8rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+/* The Grid Logic your Hub HTML is looking for */
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+/* Glass Panels that match your existing design system */
+.glass-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.module-card {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 260px;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* Special styling for the Featured Study Desk */
+.module-card.featured {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f3ff 100%);
+  border-left: 5px solid var(--primary);
+}
+
+.module-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  background: #f1f5f9;
+  padding: 4px 12px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.module-action {
+  margin-top: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+
+/* Footer Tech Stack styling */
+.tech-stack {
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hub-footer {
+  margin-top: 100px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border);
+  line-height: 1.8;
+}
+
+/* Sidebar Active State for Hub */
+.sidebar a.active {
+  background: var(--primary);
+  color: white !important;
+}
