@@ -206,3 +206,48 @@ body {
 }
 
 /* ... (Adding back all form, window, and grid styles for completeness) ... */
+.hub-viewport { margin-left: 260px; padding: 60px; max-width: 1400px; }
+.eyebrow { color: var(--primary); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.75rem; }
+
+.module-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 50px;
+}
+
+.module-card {
+  padding: 30px;
+  cursor: pointer;
+  transition: 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 240px;
+}
+
+.module-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.module-tag {
+  font-size: 0.7rem;
+  background: rgba(255,255,255,0.05);
+  padding: 4px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--muted);
+}
+
+.module-action {
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+.module-card:hover .module-action { opacity: 1; }
