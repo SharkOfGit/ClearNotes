@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ClearNotes — Your Academic Command Center</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <title>ClearNotes — Elevate Your Study</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body class="landing-page">
 
+<div class="grid-accent"></div>
+
 <nav class="glass-nav">
   <div class="container nav-flex">
-    <span class="logo">ClearNotes</span>
+    <span class="logo-text">Clear<span>Notes</span></span>
     <div class="nav-actions">
-      <a href="signup.html" class="btn btn-secondary">Login</a>
-      <a href="signup.html" class="btn btn-primary">Get Started</a>
+      <a href="signup.html" class="nav-link">Sign In</a>
+      <a href="signup.html" class="btn btn-primary btn-sm">Get Started — Free</a>
     </div>
   </div>
 </nav>
@@ -22,13 +24,15 @@
 <header class="hero-section">
   <div class="container">
     <div class="hero-content">
-      <div class="promo-badge">✨ New: AI Study Buddy 2.0</div>
-      <h1 class="hero-title">Master your studies with <span>Clarity.</span></h1>
-      <p class="hero-subtitle">The ultimate platform for Grade 9-12 students to organize notes, access NCERT resources, and boost focus.</p>
+      <div class="status-pill">
+        <span class="dot"></span> Now serving Grade 9-12
+      </div>
+      <h1 class="hero-title">Your Academic <br><span>Command Center.</span></h1>
+      <p class="hero-subtitle">The distraction-free workspace for modern students. Organize notes, access NCERT resources, and master concepts with AI companions.</p>
       
       <div class="hero-cta-group">
         <a href="signup.html" class="btn btn-primary btn-xl">Enter Workspace</a>
-        <a href="#features" class="btn btn-ghost">Learn More ↓</a>
+        <a href="#features" class="btn btn-outline btn-xl">See Features</a>
       </div>
     </div>
   </div>
@@ -36,42 +40,50 @@
 
 <main id="features" class="container section">
   <div class="section-intro">
-    <h2>Everything you need to ace your exams</h2>
-    <p>Ditch the clutter. Use the tools designed for high-performance students.</p>
+    <h2 class="sub-heading">Built for High Performance</h2>
+    <p>Everything you need to ace your exams, without the noise.</p>
   </div>
 
   <div class="feature-grid">
     <div class="f-card">
-      <div class="f-icon">📊</div>
-      <h3>Personalized Dashboard</h3>
-      <p>Your school, your grade, your subjects. Everything synced instantly.</p>
+      <div class="f-icon-wrap">📊</div>
+      <h3>Smart Dashboard</h3>
+      <p>A centralized hub that tracks your subjects, school requirements, and progress in real-time.</p>
     </div>
     <div class="f-card">
-      <div class="f-icon">🤖</div>
+      <div class="f-icon-wrap">🤖</div>
       <h3>AI Study Buddy</h3>
-      <p>An interactive companion to help you summarize complex NCERT topics.</p>
+      <p>Break down complex NCERT topics with an AI companion that speaks your language.</p>
     </div>
     <div class="f-card">
-      <div class="f-icon">🧘</div>
-      <h3>Focus Detox</h3>
-      <p>A distraction-free zone with Lo-Fi beats and pomodoro timers.</p>
+      <div class="f-icon-wrap">🧘</div>
+      <h3>Zen Focus Mode</h3>
+      <p>A deep-work environment with integrated Lo-Fi audio and Pomodoro tracking.</p>
     </div>
   </div>
 </main>
 
 <section class="demo-section">
   <div class="container">
-    <div class="video-window">
-      <div class="window-dots"><span></span><span></span><span></span></div>
-      <video controls muted loop>
+    <div class="video-browser-frame">
+      <div class="browser-header">
+        <div class="dots"><span></span><span></span><span></span></div>
+        <div class="browser-address">clearnotes.app/demo</div>
+      </div>
+      <video controls muted loop poster="thumb.png">
         <source src="Ad.mp4" type="video/mp4">
       </video>
     </div>
   </div>
 </section>
 
-<footer class="minimal-footer">
-  <p>© 2026 ClearNotes • Built by Sitheshwar M & Nithin J</p>
+<footer class="modern-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 ClearNotes</p>
+      <div class="credits">Crafted by Sitheshwar M & Nithin J</div>
+    </div>
+  </div>
 </footer>
 
 </body>
