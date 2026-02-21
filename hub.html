@@ -1,71 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="google-site-verification" content="ViAxsG4t-EqwXLj99mmySBSA6zTGNIvr_pfba6RqytM" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ClearNotes — The Notes Library</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>The Hub — ClearNotes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="hub-page">
 
-<nav class="navbar">
+<nav class="glass-nav">
   <div class="container nav-flex">
-    <span class="logo">ClearNotes</span>
+    <span class="logo">Clear<span>Notes</span></span>
     <div class="nav-actions">
-      <a href="signup.html" class="btn btn-primary">Get Started</a>
-      <a href="dashboard.html" class="btn btn-secondary">Go to Dashboard</a>
+      <a href="dashboard.html" class="nav-link">Dashboard</a>
+      <a href="study.html" class="btn btn-primary btn-sm">Resume Session</a>
     </div>
   </div>
 </nav>
 
-<header class="hero">
+<header class="hub-hero">
   <div class="container">
-    <div class="badge">v2.0 Now Live</div>
-    <h1>ClearNotes</h1>
-    <p>The notes repository and workspace for students. Organize notes, access NCERT resources, and study smarter.</p>
-    <div class="hero-btns">
-       <a href="#main-content" class="btn btn-primary">Explore Features</a>
+    <div class="status-pill">
+      <span class="pulse-dot"></span> Central Repository
     </div>
+    <h1 class="hero-title">The Study <span>Hub.</span></h1>
+    <p class="hero-subtitle">Access your personalized curriculum, deep-work tools, and community contributions in one unified interface.</p>
   </div>
 </header>
 
-<main id="main-content" class="container">
-  <section class="section">
-    <div class="section-header">
-       <h2>Your Control Center</h2>
-       <p>Everything you need, exactly where you need it.</p>
-    </div>
-    
-    <div class="card-grid">
-      <article class="card">
-        <div class="icon-circle">📚</div>
-        <h3>Personalized Notes</h3>
-        <p>Curated materials for your specific school and grade.</p>
-        <a href="pickSubject.html" class="btn btn-secondary w-100">Pick Subject</a>
-      </article>
+<main class="container hub-content">
+  <div class="section-intro">
+    <h2 class="sub-heading">Command Center</h2>
+    <p>Select a module to begin your high-performance session.</p>
+  </div>
+  
+  <div class="bento-grid">
+    <article class="f-card glass-panel">
+      <div class="card-glow"></div>
+      <div class="f-icon-wrap">📘</div>
+      <div class="card-info">
+        <h3>Smart Library</h3>
+        <p>Your grade-specific NCERT guides and community-uploaded summaries.</p>
+      </div>
+      <a href="pickSubject.html" class="btn btn-outline w-100">Browse Subjects</a>
+    </article>
 
-      <article class="card">
-        <div class="icon-circle">✍️</div>
-        <h3>Study Desk</h3>
-        <p>A digital workspace designed for deep focus sessions.</p>
-        <a href="study.html" class="btn btn-secondary w-100">Enter Desk</a>
-      </article>
+    <article class="f-card glass-panel featured-card">
+      <div class="f-icon-wrap">⚡</div>
+      <div class="card-info">
+        <h3>Focus Workspace</h3>
+        <p>Enter the immersive Study Desk with AI Buddy and Zen Focus tools enabled.</p>
+      </div>
+      <a href="study.html" class="btn btn-primary w-100">Launch Desk</a>
+    </article>
 
-      <article class="card">
-        <div class="icon-circle">📤</div>
-        <h3>Contribute</h3>
-        <p>Help the community by sharing your own resources.</p>
-        <a href="uploadnotes.html" class="btn btn-secondary w-100">Upload Now</a>
-      </article>
-    </div>
-  </section>
+    <article class="f-card glass-panel">
+      <div class="f-icon-wrap">🚀</div>
+      <div class="card-info">
+        <h3>Community Feed</h3>
+        <p>Contribute your notes to the repository and climb the leaderboard rank.</p>
+      </div>
+      <a href="uploadnotes.html" class="btn btn-outline w-100">Contribute Now</a>
+    </article>
+  </div>
 </main>
 
-<footer class="footer">
-  <div class="container">
-    <p><strong>ClearNotes</strong> — Built by Sitheshwar M & Nithin J</p>
+<footer class="modern-footer">
+  <div class="container footer-flex">
+    <p>© 2026 ClearNotes</p>
+    <div class="footer-links">
+      <span>Sitheshwar M</span>
+      <span class="divider">/</span>
+      <span>Nithin J</span>
+    </div>
   </div>
 </footer>
 
