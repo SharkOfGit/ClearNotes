@@ -63,3 +63,21 @@
 
 </body>
 </html>
+
+<button class="btn btn-primary" onclick="startTimer('Gaming')">Start 25m Focus</button>
+
+<script>
+  function startTimer(type) {
+    alert("Focus mode activated for: " + type + ". Your 25-minute timer is running.");
+    
+    // Simple console tracker to prove the logic is running
+    let timeLeft = 25 * 60;
+    const timerInterval = setInterval(() => {
+      timeLeft--;
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        alert("Session complete! Time to break.");
+      }
+    }, 1000);
+  }
+</script>
