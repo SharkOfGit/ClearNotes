@@ -130,3 +130,20 @@ input:focus {
     border: 1px solid var(--border);
     border-radius: 12px;
 }
+/* Add this to the bottom of styles.css */
+.feature-item img {
+    height: 180px;
+    object-fit: contain; /* Keeps the icons/gifs from looking stretched */
+    background: #f1f5f9;
+    padding: 10px;
+}
+
+.feature-item h3 {
+    margin-top: 10px;
+    font-size: 1.25rem;
+}
+
+.feature-item p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
