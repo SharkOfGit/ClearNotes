@@ -1,49 +1,65 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" href="Notes360-MiniLogo.png">
-<link rel="stylesheet" href="styles.css">
-
-
-<title>Notes360 - Detox</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus Detox — ClearNotes</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-<h1><u>Detox</u></h1>
 
-<p style="color: white;">Wind down from your distractions. Purely focus on studying.</p>
+<nav>
+  <div class="container nav-flex">
+    <a href="index.html" style="text-decoration:none; color:black;"><strong>ClearNotes</strong></a>
+    <a href="index.html" class="btn btn-ghost">Back to Hub</a>
+  </div>
+</nav>
 
-<hr>
+<header class="hero container" style="padding: 60px 0 40px;">
+  <h1>Focus Detox</h1>
+  <p>Identify your distractions and reclaim your study time. High-performance students don't just study harder; they remove the noise.</p>
+</header>
 
-<h2>Pick your distraction</h2>
+<main class="container">
+  <h2 style="margin-bottom: 20px;">Common Distractions</h2>
+  
+  <div class="grid">
+    <div class="feature-item">
+      <img src="https://i.giphy.com/FASybzL1ElrxpT2rTq.webp" alt="Short form" style="width:100%; border-radius:8px; margin-bottom:15px;">
+      <h3>Short-Form Content</h3>
+      <p>YT Shorts, Reels, and TikTok reduce your attention span. Set a time limit.</p>
+      <button class="btn btn-primary" style="margin-top:20px; width:100%;" onclick="startTimer('Shorts')">Start 25m Focus</button>
+    </div>
 
-<div class="grid-container">
+    <div class="feature-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbZ_IhNHNlRiq_0j_hs7xtBOF4345jQY8k7w&s" alt="Food" style="width:100%; border-radius:8px; margin-bottom:15px;">
+      <h3>Leisure Eating</h3>
+      <p>Snacking when bored mimics hunger. Drink water and reset your focus.</p>
+      <button class="btn btn-primary" style="margin-top:20px; width:100%;" onclick="startTimer('Snacking')">Start 25m Focus</button>
+    </div>
 
-<div class="grid-item">
-<h3>Short-Form Content</h3>
-<p>Content like YT Shorts, IG Reels, Tiktok, etc.</p>
-<img src="https://i.giphy.com/FASybzL1ElrxpT2rTq.webp" alt="img">
-</div>
+    <div class="feature-item">
+      <img src="https://cdn-icons-png.flaticon.com/256/3094/3094837.png" alt="Sleeping" style="width:100%; border-radius:8px; margin-bottom:15px;">
+      <h3>Escape Napping</h3>
+      <p>Napping because a topic is "hard" is a choice, you can choose.</p>
+      <button class="btn btn-primary" style="margin-top:20px; width:100%;" onclick="startTimer('Sleep')">Start 25m Focus</button>
+    </div>
 
-<div class="grid-item">
-<h3>Food</h3>
-<p>Overeating food items (snacks) for leisure.</p>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbZ_IhNHNlRiq_0j_hs7xtBOF4345jQY8k7w&s" alt="img">
-</div>
+    <div class="feature-item">
+      <img src="https://png.pngtree.com/png-vector/20240930/ourmid/pngtree-retro-neon-video-game-controller-png-image_13929194.png" alt="Gaming" style="width:100%; border-radius:8px; margin-bottom:15px;">
+      <h3>Excessive Gaming</h3>
+      <p>Games provide instant dopamine. Studying provides long-term serotonin.</p>
+      <button class="btn btn-primary" style="margin-top:20px; width:100%;" onclick="startTimer('Gaming')">Start 25m Focus</button>
+    </div>
+  </div>
+</main>
 
-<div class="grid-item">
-<h3>Sleeping</h3>
-<p>Taking naps when bored.</p>
-<img src="https://cdn-icons-png.flaticon.com/256/3094/3094837.png" alt="img">
-</div>
-
-<div class="grid-item">
-<h3>Gaming</h3>
-<p>Playing video games too much.</p>
-<img src="https://png.pngtree.com/png-vector/20240930/ourmid/pngtree-retro-neon-video-game-controller-png-image_13929194.png" alt="img">
-</div>
-
-</div>
+<script>
+  function startTimer(type) {
+    alert("Focus mode activated for: " + type + ". Your 25-minute Pomodoro starts now.");
+    // In the future, we will link this to an actual countdown clock.
+  }
+</script>
 
 </body>
 </html>
