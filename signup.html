@@ -4,94 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign In — ClearNotes</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="icon" href="ClearNotesMiniLogo.png">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="auth-page">
+<body>
 
-  <main class="google-auth-card">
-    <header class="auth-brand">
-      <div class="logo-circle">CN</div>
-      <h1>ClearNotes</h1>
-      <p id="auth-subtitle">Create an account to continue</p>
+<nav>
+  <div class="container nav-flex">
+    <a href="index.html" style="text-decoration:none; color:black;"><strong>ClearNotes</strong></a>
+  </div>
+</nav>
+
+<main class="auth-wrapper">
+  <div class="card">
+    <header style="margin-bottom: 24px; text-align: center;">
+      <h2>Welcome</h2>
+      <p style="color: var(--text-muted);">Create your student account</p>
     </header>
 
-    <div id="school-status" class="mini-badge" style="display:none;"></div>
-
-    <div class="auth-tabs">
-      <button id="tab-signup" class="tab-btn active" onclick="showAuth('signup')">Create Account</button>
-      <button id="tab-login" class="tab-btn" onclick="showAuth('login')">Sign In</button>
+    <div class="form-group">
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email Address">
+      <input type="password" placeholder="Password">
     </div>
 
-    <section id="signup-area">
-      <div class="form-group-compact">
-        <input id="userName" type="text" placeholder="Full Name" required>
-        <input id="email" type="email" placeholder="Email" required>
-        <div class="password-box">
-          <input id="password" type="password" placeholder="Password" required>
-          <button type="button" class="eye-btn" onclick="togglePass('password')">👁️</button>
-        </div>
-      </div>
-      <button class="btn btn-primary w-100 mt-20" onclick="register()">Next</button>
-    </section>
-
-    <section id="login-area" style="display: none;">
-      <div class="form-group-compact">
-        <input id="loginEmail" type="email" placeholder="Email">
-        <div class="password-box">
-          <input id="loginPassword" type="password" placeholder="Password">
-          <button type="button" class="eye-btn" onclick="togglePass('loginPassword')">👁️</button>
-        </div>
-      </div>
-      <button class="btn btn-secondary w-100 mt-20" onclick="signin()">Sign In</button>
-    </section>
-
-    <footer class="google-footer">
-      <a href="index.html" class="back-link">← Back</a>
-      <p class="privacy-text">Safe & Secure via Firebase</p>
-    </footer>
-
-    <div class="privacy-notice-mini">
-      By continuing, you agree to our <strong>Privacy Policy</strong>. We store your grade and school locally.
-    </div>
-  </main>
-
-  <script type="module" src="firebase.js"></script>
-  <script type="module">
-    import { signup, login } from "./firebase.js";
+    <button class="btn btn-primary" style="width: 100%;">Create Account</button>
     
-    window.register = () => {
-      const name = document.getElementById("userName").value;
-      if(name) localStorage.setItem("userDisplayName", name);
-      signup(document.getElementById("email").value, document.getElementById("password").value);
-    };
+    <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">
+      Already have an account? <a href="#" style="color: var(--primary);">Sign In</a>
+    </p>
+  </div>
+</main>
 
-    window.signin = () => login(document.getElementById("loginEmail").value, document.getElementById("loginPassword").value);
-    
-    // Check for school data
-    const school = JSON.parse(localStorage.getItem("chosenSchool"));
-    if(school) {
-      const badge = document.getElementById("school-status");
-      badge.style.display = "block";
-      badge.textContent = `📍 ${school.name}`;
-    }
-  </script>
-
-  <script>
-    function showAuth(type) {
-      const isSignup = type === 'signup';
-      document.getElementById('signup-area').style.display = isSignup ? 'block' : 'none';
-      document.getElementById('login-area').style.display = isSignup ? 'none' : 'block';
-      document.getElementById('tab-signup').classList.toggle('active', isSignup);
-      document.getElementById('tab-login').classList.toggle('active', !isSignup);
-      document.getElementById('auth-subtitle').textContent = isSignup ? 'Create an account to continue' : 'Welcome back to ClearNotes';
-    }
-
-    function togglePass(id) {
-      const field = document.getElementById(id);
-      field.type = field.type === "password" ? "text" : "password";
-    }
-  </script>
 </body>
 </html>
